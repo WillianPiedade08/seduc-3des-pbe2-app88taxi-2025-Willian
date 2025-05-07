@@ -15,7 +15,7 @@ CREATE TABLE `Passageiro` (
 CREATE TABLE `Motorista` (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
     `nome` VARCHAR(100) NOT NULL,
-    `cpf` VARCHAR(30) NOT NULL,
+    `cnh` VARCHAR(30) NOT NULL,
     `email` VARCHAR(100) NOT NULL,
     `senha` VARCHAR(100) NOT NULL,
 

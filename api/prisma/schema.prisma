@@ -19,7 +19,7 @@ model Passageiro {
 model Motorista {
   id    Int    @id @default(autoincrement())
   nome  String @db.VarChar(100)
-  cpf   String @unique @db.VarChar(30)
+  cnh   String @unique @db.VarChar(30)
   email String @unique @db.VarChar(100)
   senha String @db.VarChar(100)
   viagens Viagem[]
@@ -32,7 +32,7 @@ model Viagem {
   dataInicio DateTime @default(now())
   dataFim    DateTime? 
   passageiroId Int
-  motoristaId Int
+  motoristaId Int?
   passageiro Passageiro @relation(fields: [passageiroId], references: [id])
   motorista  Motorista?  @relation(fields: [motoristaId], references: [id])
 }
