@@ -26,13 +26,13 @@ model Motorista {
 }
 
 model Viagem {
-  id         Int      @id @default(autoincrement())
-  origem     String   @db.VarChar(100)
-  destino    String   @db.VarChar(100)
-  dataInicio DateTime @default(now())
-  dataFim    DateTime? 
+  id         Int       @id @default(autoincrement())
+  origem     String    @db.VarChar(100)
+  destino    String    @db.VarChar(100)
+  dataInicio DateTime  @default(now())
+  dataFim    DateTime?
   passageiroId Int
   motoristaId Int?
   passageiro Passageiro @relation(fields: [passageiroId], references: [id])
-  motorista  Motorista?  @relation(fields: [motoristaId], references: [id])
+  motorista  Motorista? @relation(fields: [motoristaId], references: [id])
 }
